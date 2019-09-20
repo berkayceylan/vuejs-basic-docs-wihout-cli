@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>İf</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if -->
+        <div>
+            <!--Remove Element-->
+            <p v-if="show">Me ?</p>
+            <p v-else>Or me?</p>
+            <button @click="show = !show">Show / Hide</button>
+    
+            <P v-if="int > 10">Greater than 10</P>
+            <P v-else-if="int == 10">Equel to 10</P>
+            <P v-else>Less than 10</P>    
+        </div>
+        <!--v-show-->
+        <div>
+            <!--Add display: none;-->
+            <p v-show="showParagh">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam enim quia delectus nobis quas voluptas reprehenderit quam, 
+                sunt rerum incidunt omnis odit sint dicta animi consequatur! Amet aliquid deleniti 
+                reiciendis.
+            </p>
+            <button @click="showParagh = !showParagh">Toggle</button>
+        </div>
+        <!--v-for--> <!--Iteration-->
+        <div>
+            <ul>
+                <li v-for="(cPart, inx) in arrays.cParts"> {{inx + 1 + " - " + cPart}} </li>
+            </ul>
+        </div>
+        <hr>
+        <!--Template render edilmez !!!-->
+        <div>
+            <template v-for="(cPart, inx) in arrays.cParts">
+                <strong> {{inx + "- "}} </strong>
+                <span> {{cPart}} </span><br>
+            </template>
+        </div>
+        <hr>
+        <!--key value-->
+        <div>
+            <div v-for="(user, parentInx) in arrays.users">
+                <strong> {{parentInx}} </strong>
+
+                <p v-for="(value, key, inx) in user">
+                    <strong>{{inx}} - {{key}} :</strong> {{value}} 
+                </p>
+                <hr>    
+            </div>
+            <div>
+                <span v-for="i in 5">
+                    {{ i }}
+                </span>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="../vue.js"></script>
+    <script src="4-vue_if.js"></script>
+</body>
+</html>

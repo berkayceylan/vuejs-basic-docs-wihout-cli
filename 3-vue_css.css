@@ -1,0 +1,19 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: inline-block;
+    margin-left: 10px;
+}
+.bg-default{
+    background-color: #000;
+}
+.bg-yellow{
+    background-color: yellow;
+}
+.bg-purple{
+    background-color: purple;
+}
+.bg-lightblue{
+    background-color: lightblue;
+}

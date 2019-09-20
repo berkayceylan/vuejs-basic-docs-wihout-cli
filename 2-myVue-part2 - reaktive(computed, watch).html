@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Guide Part 2</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!--Two-way data binding v-model -->
+        <input v-model="name">
+        <button v-on:click="counter++">Increase Counter</button>
+        <button v-on:click="counter2++">Increase Counter2</button>
+        <p> {{ counter + " || " + counter2 }} </p>
+        <p> {{ _infCounter }} </p>
+        
+        <p> {{counterStatus}} </p>
+        
+        <p> {{ _footer }} </p>
+        
+    </div>
+    <script src="../vue.js"></script>
+    <script src="myVue-part2.js"></script>
+</body>
+</html>

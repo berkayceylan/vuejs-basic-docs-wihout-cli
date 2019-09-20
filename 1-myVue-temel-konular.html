@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ name + " " + surname }}</h1>
+        <hr>
+        <!--v-on:input $event, $e olamaz--> <!-- @ == v-on: -->
+        <input type="text" name="" id="" @input="changeInf($event, 'Param1')">
+        <!--v-on:click-->
+        <button v-on:click="btn1('Clicked')"> {{btn1Name}} </button>
+        <hr>
+        <!--Data-->
+        <p>
+            {{inf}}
+            <!-- Attribute'ler v-bind directive'i ile kullanılır -->
+            <a :href="link"> {{name}} </a> <!-- : == v-bind: -->
+        </p>
+        
+        <!-- v-once -->
+        <p>v-once</p>
+        <button v-on:click="changeName('Mert')"> Change Name </button>
+        <div v-once> {{"first variable " + name}} </div> <!--render edilmediği için variable değişmez.-->
+        <hr>
+        <button v-on:click="changeName(Math.random());">Clicked Event</button>
+        <hr>
+        <hr>
+        <!--v-html-->
+        <p>v-html</p>
+        <p v-html="button + '<br>' + button2"></p>
+        <hr>
+        <!-- e.target -->
+        <p>Eventler</p>
+        <p v-on:mousemove="mouseMove($event)"> 
+            {{mouseX + "," + mouseY}}
+            <!--Modifier-->
+            <span v-on:mousemove.stop>
+                Stop
+                
+            </span>
+        </p>
+
+        <!--Key Event-->
+        <input type="text" v-on:keyup.enter.control="showAlert($event)">
+        <hr>
+        <!-- Methods (Burada computed kullanmak daha uygundur.) -->
+        <br><br><div> {{footer("Berkay CEYLAN")}} </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script src="1-myVue.js"></script>
+</body>
+</html>

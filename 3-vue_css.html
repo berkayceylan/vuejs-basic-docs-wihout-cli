@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS İşlemleri</title>
+    <link rel="stylesheet" href="vue_css.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Class Bind Etme -->
+        <div 
+            @click=" attachedClass = !attachedClass"
+            :class="divClass" 
+            class="box"
+        ></div>
+
+        <div 
+            class="box"
+            :class="[color, {'bg-default': true}]"
+        ></div>
+        
+        <!-- Style'da da aynısı yapılabilir -->
+        <div 
+            class="box"
+            :style="_width"
+        ></div>        
+        
+        <hr>
+        <input type="text" v-model="color">
+        <input type="value" v-model="width">
+        <input type="value" v-model="height">
+    </div>
+    
+    <script src="../vue.js"></script>
+    <script src="vue_css.js"></script>
+</body>
+</html>
